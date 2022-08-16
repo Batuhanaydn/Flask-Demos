@@ -1,13 +1,7 @@
-# pip install flask-liveserver
-
-from flask import Flask
-from liveserver import LiveServer
-
+from flask import Flask, render_template
 app = Flask(__name__)
-
-ls = LiveServer(app)
 
 @app.route('/')
 def index():
-    return ls.render_template('index.html')
-ls.run('127.0.0.1', 8081)
+    return render_template('/html/index.html')
+app.run('127.0.0.1', 8090, debug=True)
