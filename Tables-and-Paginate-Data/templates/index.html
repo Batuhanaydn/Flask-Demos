@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title">{% block title %} Market {% endblock %}</h1>
+<div class="content">
+    {% for stocks in stock %}
+    <div class="product">
+        <p><b>#{{ stocks.id }}</b></p>
+        <b>
+            <p class="name">{{ stocks.productName }} {{ stocks.productStore }}</p>
+        </b>
+        <p>Product Stocks: {{ stocks.productStock }}</p>
+        <p>{{ stocks.productCode }}HR2</p>
+        <p>Rate: {{ stocks.productRate }}</p>
+        {% if stocks.productActive %}
+            <p><i>(Active)</i></p>
+        {% else %}
+            <p><i>(Inactivate)</i></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

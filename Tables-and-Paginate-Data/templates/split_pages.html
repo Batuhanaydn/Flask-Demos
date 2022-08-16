@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content">
+    <h2>(Page {{ pagination.page }})</h2>
+    {% for stock in pagination.items %}
+        <div class="employee">
+            <p><b>#{{ stock.id }}</b></p>
+            <b>
+                <p class="name">{{ stock.productName }} {{ stock.productName }}</p>
+            </b>
+            <p>{{ stock.productName }}</p>
+            <p>{{ stock.productRate }} years old.</p>
+            <p>Hired: {{ stock.productName }}</p>
+            {% if stock.productActive %}
+                <p><i>(Active)</i></p>
+            {% else %}
+                <p><i>(Out of Office)</i></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
